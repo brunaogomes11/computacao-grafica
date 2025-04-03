@@ -24,7 +24,7 @@ sobel_x.save('imagens/sobel_cinza_x.jpg')
 sobel_y.save('imagens/sobel_cinza_y.jpg')
 sobel_f.save('imagens/sobel_cinza_f.jpg')
 
-#Com Sobel não houve diferença significativa entre a imagem em escala de cinza e rgb
+# Com Sobel não houve diferença significativa entre a imagem em escala de cinza e rgb. A diferença entre os dois é que na imagem não convertida, o resultado preserva as cores das bordas.
 
 mask_la1 = [0,1,0,1,-4,1,0,1,0]
 mask_la2 = [1,1,1,1,-8,1,1,1,1]
@@ -40,7 +40,7 @@ laplaciano1.save('imagens/laplaciano1_cinza.jpg')
 laplaciano2 = img_cinza.filter(ImageFilter.Kernel((3,3), mask_la2, 1))
 laplaciano2.save('imagens/laplaciano2_cinza.jpg')
 
-# Em ambas máscaras, a imagem em escala de cinza filtrou melhor as bordas
+# Em ambas máscaras, a imagem em escala de cinza filtrou melhor as bordas. Não há diferença de cor nas imagens, ambas ficam com as mesmas cores.
 
 mask_x = [-1,0,1,-1,0,1,-1,0,1]
 mask_y = [-1,-1,-1,0,0,0,1,1,1]
@@ -63,4 +63,4 @@ prewitt_x.save('imagens/prewitt_x_cinza.jpg')
 prewitt_y.save('imagens/prewitt_y_cinza.jpg')
 prewitt_f.save('imagens/prewitt_f_cinza.jpg')
 
-# Com o prewitt, na mascara y, a imagem colorida perfomou melhor quanto a cinza. Porém, em x aconteceu o contrário e na imagem total, a escala de cinza foi superior
+# Com o prewitt, na mascara y, a imagem colorida perfomou melhor quanto a cinza. Porém, em x aconteceu o contrário e na imagem total, a escala de cinza foi superior. Assim como o Filtro de Sobel, a imagem em coloração normal apresenta bordas preservando as cores reais da imagem, enquanto na escala de cinzas não.
